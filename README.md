@@ -1,6 +1,6 @@
 # Google iCalendar
 
-[![build](https://travis-ci.org/amancevice/gcalendar.svg?branch=master)](https://travis-ci.org/amancevice/gcalendar)
+[![build](https://travis-ci.org/amancevice/icalendar-gcal.svg?branch=master)](https://travis-ci.org/amancevice/icalendar-gcal)
 
 Google Calendar extension for iCalendar
 
@@ -9,7 +9,7 @@ Google Calendar extension for iCalendar
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'gcalendar'
+gem 'icalendar-gcal'
 ```
 
 And then execute:
@@ -18,12 +18,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install gcalendar
+    $ gem install icalendar-gcal
 
 ## Usage
 
 ```ruby
-require "gcalendar"
+require "icalendar/gcal"
 
 gcal = GoogleCalendar.from_google_id("abcdefghijklmnopqrstuvwxyz@group.calendar.google.com")
 # or
@@ -47,7 +47,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/gcalendar.
+Bug reports and pull requests are welcome on GitHub at https://github.com/amancevice/icalendar-gcal.
 
 ## License
 
