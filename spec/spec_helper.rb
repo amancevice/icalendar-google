@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "gcalendar"
+require "icalendar/gcal"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

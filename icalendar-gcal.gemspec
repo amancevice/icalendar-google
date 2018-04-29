@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{GoogleCalendar extension for iCalendar gem}
   spec.description   = %q{Parse GoogleCalenders into iCalendar objects from ID or public iCal URL}
-  spec.homepage      = "https://github.com/amancevice/gcalendar"
+  spec.homepage      = "https://github.com/amancevice/icalendar-gcal"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
