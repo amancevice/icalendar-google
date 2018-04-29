@@ -1,5 +1,7 @@
 # Google iCalendar
 
+[![build](https://travis-ci.org/amancevice/gcalendar.svg?branch=master)](https://travis-ci.org/amancevice/gcalendar)
+
 Google Calendar extension for iCalendar
 
 ## Installation
