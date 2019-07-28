@@ -1,6 +1,8 @@
 # Google iCalendar
 
-[![build](https://travis-ci.org/amancevice/icalendar-gcal.svg?branch=master)](https://travis-ci.org/amancevice/icalendar-gcal)
+[![Build Status](https://travis-ci.org/amancevice/icalendar-gcal.svg?branch=master)](https://travis-ci.org/amancevice/icalendar-gcal)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/test_coverage)](https://codeclimate.com/github/amancevice/icalendar-gcal/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/maintainability)](https://codeclimate.com/github/amancevice/icalendar-gcal/maintainability)
 
 Google Calendar extension for iCalendar
 
