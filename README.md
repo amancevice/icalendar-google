@@ -28,9 +28,9 @@ Or install it yourself as:
 ```ruby
 require "icalendar/gcal"
 
-gcal = GoogleCalendar.from_google_id("abcdefghijklmnopqrstuvwxyz@group.calendar.google.com")
+gcal = Icalendar::GoogleCalendar.from_google_id("abcdefghijklmnopqrstuvwxyz@group.calendar.google.com")
 # or
-gcal = GoogleCalendar.from_ical_url("https://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics")
+gcal = Icalendar::GoogleCalendar.from_ical_url("https://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics")
 
 gcal.google_id
 # => "abcdefghijklmnopqrstuvwxyz@group.calendar.google.com"
