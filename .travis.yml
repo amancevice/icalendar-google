@@ -1,4 +1,5 @@
 language: ruby
+cache: bundler
 rvm:
 - 2.3.8
 - 2.4.6
@@ -15,11 +16,3 @@ script:
 - rspec
 after_script:
 - ./cc-test-reporter after-build --exit-code ${TRAVIS_TEST_RESULT}
-deploy:
-  provider: rubygems
-  api_key:
-    secure: oIQwTX17vACLZ+NSM35yNIBWZA9p0Rxsacg6tH95NZq5EKkaC3VA2w3sDADtQNSF2Hlu/q0UT7fuawpyhUojNTvzBwUKtAoHw0dpxqMpTcyuz5RaEWHGSD31DGTGFXsdgGusxBgevjXot6innungCZRlws+2yD2YCLpmaYQSam2PpjS3yy5eDbP1Gw5kR+asnVgLkSqj1wMbllLoJRxcZFu/giDoM12mXtWOEXSN6A9qOwuISaVs5GqUOVQ48ECvR0jJDX0p8f/D42AFOuU5O1TLGwdb9lgJBYBFKgj6FKZdkVR8qzAXwswHR9KmwInZY1EoIKj7+EYpc+t7XnUIqnk4GsDUCWKbBBsJg1sPDlhsrKeFnjoLEa+aeViu6PuJcQq1QqEo0qjixTOinHX3+3zOba1Bg/mSUnclu88aHiVzNnd9cUaNeXQceVmd63TJn86CBatZR4H52H6sO7T9N+qQL5wb3zRNBWgRMq49nHp2jczlD6FadgjuGmc8F1GSh6OC2n7Z45YvV/DCm+bHR/ywBw+JmCkjaF5/scbqG65JuPptYTcsAO8mfFxnss33AyhUUwUl7QWuP+Q42ak9kTpkAb0Q4DZVmhj735SHTXRe2OZF+DX2seLXDQtbwMtw23DmxMfRPdc2S+cWQc9S/hxQKzdlWSjoNrfEOhChP5s=
-  gem: icalendar-gcal
-  on:
-    tags: true
-    repo: amancevice/icalendar-gcal

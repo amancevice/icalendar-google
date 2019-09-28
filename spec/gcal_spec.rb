@@ -1,4 +1,4 @@
-RSpec.describe Icalendar::GoogleCalendar do
+RSpec.describe Icalendar::Google::Calendar do
 
   let(:ics) do
     <<~EOS
@@ -35,7 +35,7 @@ RSpec.describe Icalendar::GoogleCalendar do
   let(:sunday)      { Date.new(2018, 4, 29) }
   let(:monday)      { Date.new(2018, 4, 30) }
 
-  subject { Icalendar::GoogleCalendar.parse(ics).first }
+  subject { Icalendar::Google::Calendar.parse(ics).first }
 
   before { allow(Net::HTTP).to receive(:get).and_return(ics) }
   before { subject.google_id = google_id }
@@ -44,7 +44,7 @@ RSpec.describe Icalendar::GoogleCalendar do
 
   describe "::from_ical_url" do
 
-    subject { Icalendar::GoogleCalendar.from_ical_url(ical_url) }
+    subject { Icalendar::Google::Calendar.from_ical_url(ical_url) }
 
     it "stores the ical URL" do
       expect(subject.ical_url).to eq ical_url
@@ -57,7 +57,7 @@ RSpec.describe Icalendar::GoogleCalendar do
 
   describe "::from_google_id" do
 
-    subject { Icalendar::GoogleCalendar.from_google_id(google_id) }
+    subject { Icalendar::Google::Calendar.from_google_id(google_id) }
 
     it "stores the ical URL" do
       expect(subject.ical_url).to eq ical_url
