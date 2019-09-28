@@ -28,18 +28,18 @@ Or install it yourself as:
 ```ruby
 require "icalendar/gcal"
 
-gcal = Icalendar::GoogleCalendar.from_google_id("abcdefghijklmnopqrstuvwxyz@group.calendar.google.com")
+gcal = Icalendar::Google::Calendar.from_google_id("ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com")
 # or
-gcal = Icalendar::GoogleCalendar.from_ical_url("https://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics")
+gcal = Icalendar::Google::Calendar.from_ical_url("https://calendar.google.com/calendar/ical/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic.ics")
 
 gcal.google_id
-# => "abcdefghijklmnopqrstuvwxyz@group.calendar.google.com"
+# => "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com"
 
 gcal.webcal_url
-# => "webcal://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics"
+# => "webcal://calendar.google.com/calendar/ical/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic.ics"
 
 gcal.event_url(gcal.events.last)
-# => "https://calendar.google.com/calendar/event?eid=YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXogYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpAZw"
+# => "https://calendar.google.com/calendar/event?eid=bW9vbnBoYXNlKzE1MTY4MzI0MDAwMDAgaHQzamxmYWFjNWxmZDYyNjN1bGZoNHRxbDhAZw"
 ```
 
 ## Development
