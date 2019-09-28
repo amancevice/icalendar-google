@@ -4,6 +4,7 @@ require "tzinfo"
 
 module Icalendar
   class GoogleCalendar < Icalendar::Calendar
+
     attr_accessor :google_id, :ical_url
 
     def cid
@@ -32,7 +33,7 @@ module Icalendar
     end
 
     def tz
-      TZInfo::Timezone.get self.x_wr_timezone.first
+      TZInfo::Timezone.get self.x_wr_timezone.first.to_s
     end
 
     def webcal_url
