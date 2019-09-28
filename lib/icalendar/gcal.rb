@@ -4,20 +4,21 @@ require "tzinfo"
 
 module Icalendar
   class GoogleCalendar < Icalendar::Calendar
+    ENDPOINT = "https://calendar.google.com/calendar"
 
     attr_accessor :google_id, :ical_url
 
     def cid
-      Base64.encode64(google_id).gsub(%r{\n|=+\Z}, "")
+      Base64.encode64(google_id.to_s).gsub(%r{\n|=+\Z}, "")
     end
 
     def eid(event)
-      seed = "#{event.uid.split(%r{@}).first} #{google_id[0..27]}"
+      seed = "#{event.uid.split(%r{@}).first} #{google_id&.slice(0, 28)}"
       Base64.encode64(seed).gsub(%r{\n|=+\Z}, "")
     end
 
     def event_url(event)
-      "https://calendar.google.com/calendar/event?eid=#{eid event}"
+      "#{ENDPOINT}/event?eid=#{eid(event)}"
     end
 
     def events_on(date)
@@ -29,30 +30,30 @@ module Icalendar
     end
 
     def google_url
-      "https://calendar.google.com/calendar/r?cid=#{cid}"
+      "#{ENDPOINT}/r?cid=#{cid}"
     end
 
     def tz
-      TZInfo::Timezone.get self.x_wr_timezone.first.to_s
+      TZInfo::Timezone.get(x_wr_timezone.first.to_s)
     end
 
     def webcal_url
-      ical_url.sub(%r{\Ahttps?://}, "webcal://")
+      ical_url&.sub(%r{\Ahttps?://}, "webcal://")
     end
 
     class << self
       def from_ical_url(url)
-        cid = url[%r{https://calendar.google.com/calendar/ical/(.*?)/public/basic.ics}, 1]
+        cid = url[%r{#{ENDPOINT}/ical/(.*?)/public/basic.ics}, 1]
         uri = URI.parse(url)
         res = Net::HTTP.get(uri)
-        cal = self.parse(res).first
+        cal = parse(res).first
         cal&.ical_url  = url
         cal&.google_id = CGI.unescape(cid)
         cal
       end
 
       def from_google_id(id)
-        url = "https://calendar.google.com/calendar/ical/#{CGI::escape id}/public/basic.ics"
+        url = "#{ENDPOINT}/ical/#{CGI::escape(id)}/public/basic.ics"
         cal = from_ical_url(url)
         cal&.google_id = id
         cal
