@@ -18,9 +18,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = Gem::Requirement.new(">= 2.2.0")
 
-  spec.add_runtime_dependency "icalendar",   "~> 2.5"
-  spec.add_runtime_dependency "tzinfo",      "~> 2.0"
-  spec.add_runtime_dependency "tzinfo-data", "~> 1.2019"
+  spec.add_runtime_dependency "icalendar", "~> 2.5"
+  spec.add_runtime_dependency "tzinfo",    "~> 2.0"
 
   spec.add_development_dependency "bundler",   "~> 2.0"
   spec.add_development_dependency "pry",       "~> 0.12"
