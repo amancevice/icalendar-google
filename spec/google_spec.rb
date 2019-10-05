@@ -1,4 +1,4 @@
-RSpec.describe Icalendar::Google::Calendar do
+RSpec.describe Icalendar::Calendar do
 
   let(:ics) do
     <<~EOS
@@ -27,6 +27,7 @@ RSpec.describe Icalendar::Google::Calendar do
   let(:event_url)   { "https://calendar.google.com/calendar/event?eid=YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXogYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpAZw" }
   let(:google_id)   { "abcdefghijklmnopqrstuvwxyz@group.calendar.google.com" }
   let(:google_url)  { "https://calendar.google.com/calendar/r?cid=YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" }
+  let(:headers)     { {"Content-Type" => "text/calendar; charset=utf-8"} }
   let(:ical_url)    { "https://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics" }
   let(:webcal_url)  { "webcal://calendar.google.com/calendar/ical/abcdefghijklmnopqrstuvwxyz%40group.calendar.google.com/public/basic.ics" }
 
@@ -35,16 +36,16 @@ RSpec.describe Icalendar::Google::Calendar do
   let(:sunday)      { Date.new(2018, 4, 29) }
   let(:monday)      { Date.new(2018, 4, 30) }
 
-  subject { Icalendar::Google::Calendar.parse(ics).first }
+  subject { Icalendar::Calendar.parse(ics).first }
 
-  before { allow(Net::HTTP).to receive(:get).and_return(ics) }
+  before { stub_request(:get, ical_url).to_return(body: ics, headers: headers) }
   before { subject.google_id = google_id }
   before { subject.ical_url = ical_url }
   before { event.uid = event_id }
 
-  describe "::from_ical_url" do
+  describe "::from_url" do
 
-    subject { Icalendar::Google::Calendar.from_ical_url(ical_url) }
+    subject { Icalendar::Calendar.from_url(ical_url).first }
 
     it "stores the ical URL" do
       expect(subject.ical_url).to eq ical_url
@@ -57,7 +58,7 @@ RSpec.describe Icalendar::Google::Calendar do
 
   describe "::from_google_id" do
 
-    subject { Icalendar::Google::Calendar.from_google_id(google_id) }
+    subject { Icalendar::Calendar.from_google_id(google_id).first }
 
     it "stores the ical URL" do
       expect(subject.ical_url).to eq ical_url

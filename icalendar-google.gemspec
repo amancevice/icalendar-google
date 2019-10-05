@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "icalendar/gcal/version"
+require "icalendar/google/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "icalendar-gcal"
+  spec.name          = "icalendar-google"
   spec.version       = Icalendar::Google::VERSION
   spec.authors       = ["Alexander Mancevice"]
   spec.email         = ["alexander.mancevice@gmail.com"]
 
   spec.summary       = %q{GoogleCalendar extension for iCalendar gem}
   spec.description   = %q{Parse GoogleCalenders into iCalendar objects from ID or public iCal URL}
-  spec.homepage      = "https://github.com/amancevice/icalendar-gcal"
+  spec.homepage      = "https://github.com/amancevice/icalendar-google"
   spec.license       = "MIT"
   spec.require_paths = ["lib"]
   spec.files         = Dir["README*", "LICENSE*", "lib/**/*"]
@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake",      "~> 12.3"
   spec.add_development_dependency "rspec",     "~> 3.0"
   spec.add_development_dependency "simplecov", "~> 0.16"
+  spec.add_development_dependency "webmock",   "~> 3.7"
 end

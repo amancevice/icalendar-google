@@ -2,7 +2,8 @@ require "simplecov"
 SimpleCov.start
 
 require "bundler/setup"
-require "icalendar/gcal"
+require "webmock/rspec"
+require "icalendar/google"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

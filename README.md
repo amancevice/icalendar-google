@@ -1,9 +1,9 @@
 # Google iCalendar
 
-[![Build Status](https://travis-ci.com/amancevice/icalendar-gcal.svg?branch=master)](https://travis-ci.com/amancevice/icalendar-gcal)
-[![Gem Version](https://badge.fury.io/rb/icalendar-gcal.svg)](https://badge.fury.io/rb/icalendar-gcal)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/test_coverage)](https://codeclimate.com/github/amancevice/icalendar-gcal/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/maintainability)](https://codeclimate.com/github/amancevice/icalendar-gcal/maintainability)
+[![Build Status](https://travis-ci.com/amancevice/icalendar-google.svg?branch=master)](https://travis-ci.com/amancevice/icalendar-google)
+[![Gem Version](https://badge.fury.io/rb/icalendar-google.svg)](https://badge.fury.io/rb/icalendar-google)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/test_coverage)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/maintainability)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
 
 Google Calendar extension for iCalendar
 
@@ -12,7 +12,7 @@ Google Calendar extension for iCalendar
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'icalendar-gcal'
+gem 'icalendar-google'
 ```
 
 And then execute:
@@ -21,16 +21,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install icalendar-gcal
+    $ gem install icalendar-google
 
 ## Usage
 
 ```ruby
-require "icalendar/gcal"
+require "icalendar/google"
 
-gcal = Icalendar::Google::Calendar.from_google_id("ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com")
+google_id  = "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com"
+public_url = "https://calendar.google.com/calendar/ical/#{CGI.escape google_id}/public/basic.ics"
+
+gcal = Icalendar::Calendar.from_google_id(google_id).first
 # or
-gcal = Icalendar::Google::Calendar.from_ical_url("https://calendar.google.com/calendar/ical/ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com/public/basic.ics")
+gcal = Icalendar::Calendar.from_url(public_url).first
 
 gcal.google_id
 # => "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com"
@@ -42,15 +45,9 @@ gcal.event_url(gcal.events.last)
 # => "https://calendar.google.com/calendar/event?eid=bW9vbnBoYXNlKzE1MTY4MzI0MDAwMDAgaHQzamxmYWFjNWxmZDYyNjN1bGZoNHRxbDhAZw"
 ```
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/amancevice/icalendar-gcal.
+Bug reports and pull requests are welcome on GitHub at https://github.com/amancevice/icalendar-google.
 
 ## License
 

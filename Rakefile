@@ -7,7 +7,7 @@ task :default => :spec
 namespace :gem do
   require "bundler/gem_tasks"
 
-  gem = "pkg/icalendar-gcal-#{Icalendar::Google::VERSION}.gem"
+  gem = "pkg/icalendar-google-#{Icalendar::Google::VERSION}.gem"
 
   desc "Push #{gem} to rubygems.org"
   task :push => :build do
