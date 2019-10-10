@@ -17,7 +17,7 @@ module Icalendar
         body = Net::HTTP.start(uri.host, uri.port, use_ssl: ssl) do |http|
           req = Net::HTTP::Get.new(uri.request_uri)
           res = http.request(req)
-          enc = res['content-type'][%r{charset=(.*)}, 1]
+          enc = res['content-type'][%r{charset=(.*)}i, 1]
           enc.nil? ? res.body : res.body.force_encoding(enc)
         end
         Calendar.parse(body).each do |calendar|
