@@ -1,6 +1,6 @@
 # Google iCalendar
 
-[![Build Status](https://travis-ci.com/amancevice/icalendar-google.svg?branch=master)](https://travis-ci.com/amancevice/icalendar-google)
+[![RSpec](https://github.com/amancevice/icalendar-google/workflows/RSpec/badge.svg)](https://github.com/amancevice/icalendar-google/actions)
 [![Gem Version](https://badge.fury.io/rb/icalendar-google.svg)](https://badge.fury.io/rb/icalendar-google)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/test_coverage)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/maintainability)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
