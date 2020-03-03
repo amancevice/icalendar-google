@@ -37,4 +37,4 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
-        command: after-build
+        command: after-build -t simplecov
