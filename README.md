@@ -1,9 +1,9 @@
 # Google iCalendar
 
-[![RSpec](https://github.com/amancevice/icalendar-google/workflows/RSpec/badge.svg)](https://github.com/amancevice/icalendar-google/actions)
-[![Gem Version](https://badge.fury.io/rb/icalendar-google.svg)](https://badge.fury.io/rb/icalendar-google)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/test_coverage)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/9262efaca53e186d1801/maintainability)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
+![gem](https://img.shields.io/gem/v/icalendar-google?logo=rubygems&logoColor=eee&style=flat-square)
+[![rspec](https://img.shields.io/github/workflow/status/amancevice/icalendar-google/RSpec?logo=github&style=flat-square)](https://github.com/amancevice/icalendar-google/actions)
+[![coverage](https://img.shields.io/codeclimate/coverage/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
+[![maintainability](https://img.shields.io/codeclimate/maintainability/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
 
 Google Calendar extension for iCalendar
 
