@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    icalendar-google (0.4.0)
+    icalendar-google (0.4.1)
       icalendar (~> 2.5)
       tzinfo (~> 2.0)
 
