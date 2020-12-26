@@ -1,3 +1,4 @@
+require "cgi"
 require "net/http"
 
 module Icalendar
@@ -13,7 +14,6 @@ module Icalendar
         cid = url[%r{https://calendar.google.com/calendar/ical/(.*?)/public/basic.ics}, 1]
         uri = URI.parse(url)
         ssl = uri.scheme == "https"
-        # require "pry"; binding.pry
         body = Net::HTTP.start(uri.host, uri.port, use_ssl: ssl) do |http|
           req = Net::HTTP::Get.new(uri.request_uri)
           res = http.request(req)
