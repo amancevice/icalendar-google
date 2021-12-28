@@ -10,10 +10,11 @@ jobs:
     strategy:
       matrix:
         ruby:
-          - 2.5
-          - 2.6
-          - 2.7
-          - 3.0
+          - "2.5"
+          - "2.6"
+          - "2.7"
+          - "3.0"
+          - "3.1"
     steps:
     - uses: actions/checkout@v1
     - uses: ruby/setup-ruby@v1
@@ -23,7 +24,7 @@ jobs:
       with:
         cc_test_reporter_id: ${{ secrets.CC_TEST_REPORTER_ID }}
     - run: cc-test-reporter before-build
-    - run: gem install bundler -v 2.1.4
+    - run: gem install bundler
     - run: bundle install --jobs 4 --retry 3
     - run: bundle exec rake
     - run: cc-test-reporter after-build
