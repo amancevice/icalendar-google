@@ -1,7 +1,7 @@
 # Google iCalendar
 
 ![gem](https://img.shields.io/gem/v/icalendar-google?logo=rubygems&logoColor=eee&style=flat-square)
-[![rspec](https://img.shields.io/github/workflow/status/amancevice/icalendar-google/RSpec?logo=github&style=flat-square)](https://github.com/amancevice/icalendar-google/actions)
+[![rspec](https://github.com/amancevice/icalendar-google/actions/workflows/rspec.yml/badge.svg)](https://github.com/amancevice/icalendar-google/actions/workflows/rspec.yml)
 [![coverage](https://img.shields.io/codeclimate/coverage/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
 [![maintainability](https://img.shields.io/codeclimate/maintainability/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
 
@@ -17,11 +17,15 @@ gem 'icalendar-google'
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install icalendar-google
+```bash
+gem install icalendar-google
+```
 
 ## Usage
 
@@ -47,7 +51,7 @@ gcal.event_url(gcal.events.last)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/amancevice/icalendar-google.
+Bug reports and pull requests are welcome on GitHub at [github.com/amancevice/icalendar-google](https://github.com/amancevice/icalendar-google).
 
 ## License
 
