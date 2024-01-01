@@ -51,7 +51,7 @@ gcal.event_url(gcal.events.last)
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [github.com/amancevice/icalendar-google](https://github.com/amancevice/icalendar-google).
+Bug reports and pull requests are welcome on GitHub at [amancevice/icalendar-google](https://github.com/amancevice/icalendar-google).
 
 ## License
 
