@@ -8,7 +8,7 @@ module Icalendar
       attr_accessor :google_id, :ical_url
 
       def cid
-        Base64.encode64(@google_id.to_s).gsub(%r{\n|=+\Z}, "")
+        Google.cid(@google_id)
       end
 
       def eid(event)
@@ -29,7 +29,7 @@ module Icalendar
       end
 
       def google_url
-        "https://calendar.google.com/calendar/r?cid=#{cid}"
+        Google.google_url(@google_id)
       end
 
       def tz
@@ -37,7 +37,7 @@ module Icalendar
       end
 
       def webcal_url
-        ical_url&.sub(%r{\Ahttps?://}, "webcal://")
+        Google.webcal_url(@google_id)
       end
     end
   end
