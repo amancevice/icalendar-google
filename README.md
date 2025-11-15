@@ -2,8 +2,8 @@
 
 ![gem](https://img.shields.io/gem/v/icalendar-google?logo=rubygems&logoColor=eee&style=flat-square)
 [![rspec](https://github.com/amancevice/icalendar-google/actions/workflows/rspec.yml/badge.svg)](https://github.com/amancevice/icalendar-google/actions/workflows/rspec.yml)
-[![coverage](https://img.shields.io/codeclimate/coverage/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage)
-[![maintainability](https://img.shields.io/codeclimate/maintainability/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability)
+<!-- [![coverage](https://img.shields.io/codeclimate/coverage/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/test_coverage) -->
+<!-- [![maintainability](https://img.shields.io/codeclimate/maintainability/amancevice/icalendar-google?logo=code-climate&style=flat-square)](https://codeclimate.com/github/amancevice/icalendar-google/maintainability) -->
 
 Google Calendar extension for iCalendar
 
